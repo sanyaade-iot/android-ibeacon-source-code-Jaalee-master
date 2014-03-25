@@ -9,19 +9,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.jaalee.sdk.Beacon;
 import com.jaalee.sdk.connection.BeaconConnection;
+import com.jaalee.sdk.connection.BeaconConnection.WriteCallback;
 
 /**
  * http://www.jaalee.com/
  * Jaalee, Inc.
  * This project is for developers, not for commercial purposes.
- * For the source codes which can be  used for commercial purposes, please contact us directly.
+ * For the source codes which can be used for commercial purposes, please contact us directly.
  * 
  * @author Alvin.Bert
+ * 
  * Alvin.Bert.hu@gmail.com
  * 
- * service@jaalee.com
+ * Service@jaalee.com
+ * 
  */
-
 public class CharacteristicsDemoActivity extends Activity {
 
   private Beacon beacon;
@@ -29,7 +31,6 @@ public class CharacteristicsDemoActivity extends Activity {
 
   private TextView statusView;
   private TextView beaconDetailsView;
-  private EditText minorEditView;
   private View afterConnectedView;
 
   @Override
@@ -41,11 +42,10 @@ public class CharacteristicsDemoActivity extends Activity {
     statusView = (TextView) findViewById(R.id.status);
     beaconDetailsView = (TextView) findViewById(R.id.beacon_details);
     afterConnectedView = findViewById(R.id.after_connected);
-    minorEditView = (EditText) findViewById(R.id.minor);
 
     beacon = getIntent().getParcelableExtra(ListBeaconsActivity.EXTRAS_BEACON);
     connection = new BeaconConnection(this, beacon, createConnectionCallback());
-    findViewById(R.id.update).setOnClickListener(createUpdateButtonListener());
+    findViewById(R.id.Call).setOnClickListener(createUpdateButtonListener());
   }
 
   @Override
@@ -78,48 +78,24 @@ public class CharacteristicsDemoActivity extends Activity {
    */
   private View.OnClickListener createUpdateButtonListener() {
     return new View.OnClickListener() {
-      @Override public void onClick(View v) {
-        int minor = parseMinorFromEditView();
-        if (minor == -1) {
-          showToast("Minor must be a number");
-        } else {
-          updateMinor(minor);
-        }
+      @Override 
+      public void onClick(View v) {
+    	  connection.CallBeacon(new WriteCallback() {
+			
+			@Override
+			public void onSuccess() {
+				// TODO Auto-generated method stub
+				showToast("Call Beacon Success");
+			}
+			
+			@Override
+			public void onError() {
+				// TODO Auto-generated method stub
+				showToast("Call Beacon Failed");
+			}
+		});
       }
     };
-  }
-
-  /**
-   * @return Parsed integer from edit text view or -1 if cannot be parsed.
-   */
-  private int parseMinorFromEditView() {
-    try {
-      return Integer.parseInt(String.valueOf(minorEditView.getText()));
-    } catch (NumberFormatException e) {
-      return -1;
-    }
-  }
-
-  private void updateMinor(int minor) {
-    // Minor value will be normalized if it is not in the range.
-    // Minor should be 16-bit unsigned integer.
-    connection.writeMinor(minor, new BeaconConnection.WriteCallback() {
-      @Override public void onSuccess() {
-        runOnUiThread(new Runnable() {
-          @Override public void run() {
-            showToast("Minor value updated");
-          }
-        });
-      }
-
-      @Override public void onError() {
-        runOnUiThread(new Runnable() {
-          @Override public void run() {
-            showToast("Minor not updated");
-          }
-        });
-      }
-    });
   }
 
   private BeaconConnection.ConnectionCallback createConnectionCallback() {
@@ -129,13 +105,13 @@ public class CharacteristicsDemoActivity extends Activity {
           @Override public void run() {
             statusView.setText("Status: Connected to beacon");
             StringBuilder sb = new StringBuilder()
-                .append("Major: ").append(beacon.getMajor()).append("\n")
-                .append("Minor: ").append(beacon.getMinor()).append("\n")
-                .append("Advertising interval: ").append(beaconChars.getAdvertisingIntervalMillis()).append("ms\n")
+            	.append("UUID: ").append(beaconChars.getBeaconUUID()).append("\n")
+                .append("Major: ").append(beaconChars.getMajor()).append("\n")
+                .append("Minor: ").append(beaconChars.getMinor()).append("\n")
+                .append("Advertising interval: ").append(beaconChars.getBroadcastRate()).append("ms\n")
                 .append("Broadcasting power: ").append(beaconChars.getBroadcastingPower()).append(" dBm\n")
-                .append("Battery: ").append(beaconChars.getBatteryPercent()).append(" %");
+                .append("Device Name: ").append(beaconChars.getBeaconName());
             beaconDetailsView.setText(sb.toString());
-            minorEditView.setText(String.valueOf(beacon.getMinor()));
             afterConnectedView.setVisibility(View.VISIBLE);
           }
         });

@@ -1,18 +1,18 @@
-package com.jaalee.sdk;
+ package com.jaalee.sdk;
  
-import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothManager;
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.Intent;
-import android.content.ServiceConnection;
-import android.content.pm.PackageManager;
+ import android.bluetooth.BluetoothAdapter;
+ import android.bluetooth.BluetoothManager;
+ import android.content.ComponentName;
+ import android.content.Context;
+ import android.content.Intent;
+ import android.content.ServiceConnection;
+ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.os.Handler;
-import android.os.IBinder;
-import android.os.Message;
-import android.os.Messenger;
-import android.os.RemoteException;
+ import android.os.Handler;
+ import android.os.IBinder;
+ import android.os.Message;
+ import android.os.Messenger;
+ import android.os.RemoteException;
 import com.jaalee.sdk.internal.Preconditions;
 import com.jaalee.sdk.service.BeaconService;
 import com.jaalee.sdk.service.MonitoringResult;
@@ -20,24 +20,23 @@ import com.jaalee.sdk.service.RangingResult;
 import com.jaalee.sdk.service.ScanPeriodData;
 import com.jaalee.sdk.utils.L;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+ import java.util.HashSet;
+ import java.util.List;
+ import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
-
 /**
  * http://www.jaalee.com/
  * Jaalee, Inc.
  * This project is for developers, not for commercial purposes.
- * For the source codes which can be  used for commercial purposes, please contact us directly.
+ * For the source codes which can be used for commercial purposes, please contact us directly.
  * 
  * @author Alvin.Bert
+ * 
  * Alvin.Bert.hu@gmail.com
  * 
- * service@jaalee.com
+ * Service@jaalee.com
+ * 
  */
-
-
  public class BeaconManager
  {
 //   private static final String ANDROID_MANIFEST_CONDITIONS_MSG = "AndroidManifest.xml does not contain android.permission.BLUETOOTH or android.permission.BLUETOOTH_ADMIN permissions. BeaconService may be also not declared in AndroidManifest.xml.";

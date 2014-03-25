@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+﻿# The Source code Of iBeacon android SDK #
+=======
 # The Source code Of iBeacon android SDK #
+>>>>>>> 0891c6e2dedbf944a0010ae6bd0f1194898fac0d
 
 ## Overview ##
 

@@ -8,16 +8,18 @@ import java.lang.reflect.Method;
  * http://www.jaalee.com/
  * Jaalee, Inc.
  * This project is for developers, not for commercial purposes.
- * For the source codes which can be  used for commercial purposes, please contact us directly.
+ * For the source codes which can be used for commercial purposes, please contact us directly.
  * 
  * @author Alvin.Bert
+ * 
  * Alvin.Bert.hu@gmail.com
  * 
- * service@jaalee.com
+ * Service@jaalee.com
+ * 
  */
 public class L
 {
-	private static final String TAG = "JaaleeSDK";
+	private static final String TAG = "EstimoteSDK";
 	private static boolean ENABLE_DEBUG_LOGGING = false;
 	private static boolean ENABLE_CRASHLYTICS_LOGGING = false;
 	private static Method CRASHLYTICS_LOG_METHOD;
@@ -46,7 +48,7 @@ public class L
 	{
 		if (ENABLE_DEBUG_LOGGING) {
 			String logMsg = debugInfo() + msg;
-			Log.v("JaaleeSDK", logMsg);
+			Log.v("EstimoteSDK", logMsg);
 			logCrashlytics(logMsg);
 		}
 	}
@@ -54,44 +56,44 @@ public class L
 	public static void d(String msg) {
 	     if (ENABLE_DEBUG_LOGGING) {
 	    	 String logMsg = debugInfo() + msg;
-	    	 Log.d("JaaleeSDK", logMsg);
+	    	 Log.d("EstimoteSDK", logMsg);
 	    	 logCrashlytics(logMsg);
 	     }
 	}
 
 	public static void i(String msg) {
 		String logMsg = debugInfo() + msg;
-		Log.i("JaaleeSDK", logMsg);
+		Log.i("EstimoteSDK", logMsg);
 		logCrashlytics(logMsg);
 	}
 
 	public static void w(String msg) {
 		String logMsg = debugInfo() + msg;
-		Log.w("JaaleeSDK", logMsg);
+		Log.w("EstimoteSDK", logMsg);
 		logCrashlytics(logMsg);
 	}
 
 	public static void e(String msg) {
 		String logMsg = debugInfo() + msg;
-		Log.e("JaaleeSDK", logMsg);
+		Log.e("EstimoteSDK", logMsg);
 		logCrashlytics(msg);
 	}
 
 	public static void e(String msg, Throwable e) {
 		String logMsg = debugInfo() + msg;
-		Log.e("JaaleeSDK", logMsg, e);
+		Log.e("EstimoteSDK", logMsg, e);
 		logCrashlytics(msg + " " + throwableAsString(e));
 	}
 
 	public static void wtf(String msg) {
 		String logMsg = debugInfo() + msg;
-		Log.wtf("JaaleeSDK", logMsg);
+		Log.wtf("EstimoteSDK", logMsg);
 		logCrashlytics(logMsg);
 	}
 
 	public static void wtf(String msg, Exception exception) {
 		String logMsg = debugInfo() + msg;
-		Log.wtf("JaaleeSDK", logMsg, exception);
+		Log.wtf("EstimoteSDK", logMsg, exception);
 		logCrashlytics(logMsg + " " + throwableAsString(exception));
 	}
 
