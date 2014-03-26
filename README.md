@@ -1,4 +1,4 @@
-﻿# The Source code Of iBeacon android SDK #
+﻿﻿# The Source code Of iBeacon android SDK #
 
 
 ## Overview ##
@@ -9,7 +9,7 @@ It allows for:
 - beacon characteristic reading and writing (proximity UUID, major & minor values, broadcasting power, advertising interval), see BeaconConnection class and demos in the source code
 
 Notice：
-This project is for developers to make a reference, but not for commercial purposes. If you have any questions when you use the codes , or you need  the source codes which can be  used for commercial purposes, please contact us directly. [More examples](https://github.com/AlvinBert/android-ibeacon-Pro-source-code)
+This project is for developers to make a reference, but not for commercial purposes. If you have any questions when you use the codes , or you need  the source codes which can be  used for commercial purposes, please contact us directly. [More examples](https://github.com/AlvinBert/android-ibeacon-Jaalee-source-code)
 
 Author：Alvin.Bert
 
