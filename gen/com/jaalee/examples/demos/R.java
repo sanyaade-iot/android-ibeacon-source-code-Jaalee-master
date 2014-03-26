@@ -15,19 +15,41 @@ public final class R {
         public static final int bg_distance=0x7f020001;
         public static final int dot=0x7f020002;
         public static final int ic_launcher=0x7f020003;
-        public static final int ic_menu_preferences=0x7f020004;
+        public static final int ic_menu_moreoverflow_holo_light=0x7f020004;
+        public static final int ic_menu_moreoverflow_normal_holo_dark=0x7f020005;
+        public static final int ic_menu_moreoverflow_normal_holo_light=0x7f020006;
+        public static final int ic_menu_preferences=0x7f020007;
     }
     public static final class id {
         public static final int Call=0x7f060006;
+        public static final int Item1=0x7f06001a;
+        public static final int Item2=0x7f06001b;
+        public static final int Item3=0x7f06001c;
+        public static final int Item4=0x7f06001d;
         public static final int after_connected=0x7f060005;
         public static final int beacon_details=0x7f060004;
         public static final int characteristics_demo_button=0x7f060002;
         public static final int device_list=0x7f06000a;
         public static final int distance_demo_button=0x7f060000;
         public static final int dot=0x7f060009;
-        public static final int menu_settings=0x7f06000b;
+        public static final int editItem1=0x7f060011;
+        public static final int edititem2=0x7f060013;
+        public static final int edititem3=0x7f060014;
+        public static final int edititem4=0x7f060015;
+        public static final int fileItem1=0x7f06000b;
+        public static final int fileitem2=0x7f06000d;
+        public static final int fileitem3=0x7f06000e;
+        public static final int fileitem4=0x7f06000f;
+        public static final int fileitem5=0x7f060010;
+        public static final int group1=0x7f06000c;
+        public static final int group2=0x7f060012;
+        public static final int group3=0x7f060017;
+        public static final int helpItem1=0x7f060016;
+        public static final int helpitem2=0x7f060018;
+        public static final int helpitem3=0x7f060019;
+        public static final int menu_settings=0x7f06001e;
         public static final int notify_demo_button=0x7f060001;
-        public static final int refresh=0x7f06000c;
+        public static final int refresh=0x7f06001f;
         public static final int root=0x7f060007;
         public static final int sonar=0x7f060008;
         public static final int status=0x7f060003;
@@ -42,8 +64,9 @@ public final class R {
         public static final int notify_demo=0x7f030006;
     }
     public static final class menu {
-        public static final int options=0x7f050000;
-        public static final int scan_menu=0x7f050001;
+        public static final int activity_menu_by_resource=0x7f050000;
+        public static final int options=0x7f050001;
+        public static final int scan_menu=0x7f050002;
     }
     public static final class string {
         public static final int app_name=0x7f040000;

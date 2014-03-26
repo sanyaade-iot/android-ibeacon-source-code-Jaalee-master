@@ -19,7 +19,7 @@ import java.lang.reflect.Method;
  */
 public class L
 {
-	private static final String TAG = "EstimoteSDK";
+	private static final String TAG = "JaaleeSDK";
 	private static boolean ENABLE_DEBUG_LOGGING = false;
 	private static boolean ENABLE_CRASHLYTICS_LOGGING = false;
 	private static Method CRASHLYTICS_LOG_METHOD;
@@ -48,7 +48,7 @@ public class L
 	{
 		if (ENABLE_DEBUG_LOGGING) {
 			String logMsg = debugInfo() + msg;
-			Log.v("EstimoteSDK", logMsg);
+			Log.v("JaaleeSDK", logMsg);
 			logCrashlytics(logMsg);
 		}
 	}
@@ -56,44 +56,44 @@ public class L
 	public static void d(String msg) {
 	     if (ENABLE_DEBUG_LOGGING) {
 	    	 String logMsg = debugInfo() + msg;
-	    	 Log.d("EstimoteSDK", logMsg);
+	    	 Log.d("JaaleeSDK", logMsg);
 	    	 logCrashlytics(logMsg);
 	     }
 	}
 
 	public static void i(String msg) {
 		String logMsg = debugInfo() + msg;
-		Log.i("EstimoteSDK", logMsg);
+		Log.i("JaaleeSDK", logMsg);
 		logCrashlytics(logMsg);
 	}
 
 	public static void w(String msg) {
 		String logMsg = debugInfo() + msg;
-		Log.w("EstimoteSDK", logMsg);
+		Log.w("JaaleeSDK", logMsg);
 		logCrashlytics(logMsg);
 	}
 
 	public static void e(String msg) {
 		String logMsg = debugInfo() + msg;
-		Log.e("EstimoteSDK", logMsg);
+		Log.e("JaaleeSDK", logMsg);
 		logCrashlytics(msg);
 	}
 
 	public static void e(String msg, Throwable e) {
 		String logMsg = debugInfo() + msg;
-		Log.e("EstimoteSDK", logMsg, e);
+		Log.e("JaaleeSDK", logMsg, e);
 		logCrashlytics(msg + " " + throwableAsString(e));
 	}
 
 	public static void wtf(String msg) {
 		String logMsg = debugInfo() + msg;
-		Log.wtf("EstimoteSDK", logMsg);
+		Log.wtf("JaaleeSDK", logMsg);
 		logCrashlytics(logMsg);
 	}
 
 	public static void wtf(String msg, Exception exception) {
 		String logMsg = debugInfo() + msg;
-		Log.wtf("EstimoteSDK", logMsg, exception);
+		Log.wtf("JaaleeSDK", logMsg, exception);
 		logCrashlytics(logMsg + " " + throwableAsString(exception));
 	}
 
